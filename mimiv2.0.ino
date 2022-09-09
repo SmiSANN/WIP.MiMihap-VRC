@@ -27,7 +27,7 @@ void handleRoot() {
   String lengthValue1 = server.arg("LENGTH1");
   String powerValue1 = server.arg("POWER1");
 
-  if(lengthValue0 == "")
+  if(lengthValue0 == "")  //時間がnullだった時にスキップするやつ(多分いらないかも)
   {
     server.send(200, "text/plain", "Skip Signal");
     return;
@@ -47,7 +47,7 @@ void handleRoot() {
   counter1 = 0;
   
   int powerInt0 = powerValue0.toInt();
-  powerInt0 = constrain(powerInt0, 0, 255);
+  powerInt0 = constrain(powerInt0, 0, 255); //強さを0〜255の範囲に矯正
   power0 = powerInt0; 
   
   int powerInt1 = powerValue1.toInt();
@@ -103,9 +103,9 @@ void setup(void) {
   Serial.print("MAC address");
   Serial.println(WiFi.macAddress());
 
-  if (MDNS.begin("mimihp")) {
+  if (MDNS.begin("mimihp")) {  //mimihp.localでアクセスできるようにする
     Serial.println("MDNS responder started");
-  }
+  }   
 
   server.on("/", handleRoot);
   
