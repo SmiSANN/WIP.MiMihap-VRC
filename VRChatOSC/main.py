@@ -2,15 +2,7 @@ from cgi import test
 from pythonosc import dispatcher
 from pythonosc import osc_server
 import requests
-test = 0
-def messege_handler(unused_addr, *p):
-    try:
-        print(p)
-        test.send_message("/message_echo", p)
-    except ValueError: pass
 
-dispatcher = dispatcher.Dispatcher()
-dispatcher.map("/message", messege_handler)
 server = osc_server.ThreadingOSCUDPServer(("127.0.0.1", 9001), dispatcher)
 print("Serving on {}".format(server.server_address))
 
