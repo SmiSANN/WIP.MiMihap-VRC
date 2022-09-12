@@ -1,10 +1,8 @@
-# MIMIv2.0
-NeosVRとESP32で振動子をうごかすやつ
+# MIMIv2.0forVRC
+NeosVRとESP32で振動子をうごかすやつをoscを使ってVRChat対応させるやつ WIP
 ## Inspiration
+- [CaiVR-Custom-Haptic-Vest-V1](https://github.com/CaiVR/CaiVR-Custom-Haptic-Vest-V1)
 - [Melnus/VirtualTailSystem](https://logix-educational-institute.github.io/NeosVRJP-Techbook/examples/VirtualTailSystem.html)
 ## Libraries
-- WiFi.h
-- WiFiClient.h
-- WebServer.h
-- ESPmDNS.h
-- [WiFiManager.h](https://github.com/tzapu/WiFiManager)
+- python-osc
+- cgi
